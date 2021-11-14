@@ -33,7 +33,9 @@ PoolTicker = os.environ.get('POOL_TICKER')
 VrfKeyFile = os.environ.get('VRF_SKEY_PATH')
 localTz = os.environ.get('LOCAL_TZ')
 
-### -------------------------------------------------------------- ###
+if not(BlockFrostId and PoolId and PoolTicker and VrfKeyFile and localTz):
+  print("\nYou must define the following environment variables : BLOCKFROST_ID, POOL_ID, POOL_TICKER, VRF_SKEY_PATH and LOCAL_TZ\n")
+  sys.exit(1)
 
 local_tz = pytz.timezone(localTz)
 
