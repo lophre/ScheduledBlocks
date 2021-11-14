@@ -1,4 +1,33 @@
+# LOPHRE fork of ScheduledBlocks
+
+This is simplified version of [Snake Pool's ScheduledBlock](https://github.com/asnakep/ScheduledBlocks).  The original version is using nonce.armada-alliance.com which at
+ the time of writing this fork was no more available.  This new version is only providing slot schedule for the current epoch as the nonce for the next epoch was provided
+ by the armada-alliance.com service.  I am not creating a pull request to the original code as it has reduced functionnality.
+
+I changed a bit the script to feed it's parameters by using environment variables, you will have to configure those to get going:
+
+```
+cardano-leaderlog-5f8b7695f5-k6dmt:$ export BLOCKFROST_ID="your_blockfrost_id_here"
+cardano-leaderlog-5f8b7695f5-k6dmt:$ export POOL_ID="6aef3925b53d98084e8a9ec0145c1770e7eb57f84cd2d2613bb4c19a"
+cardano-leaderlog-5f8b7695f5-k6dmt:$ export POOL_TICKER="LPR"
+cardano-leaderlog-5f8b7695f5-k6dmt:$ export VRF_SKEY_PATH='/opt/srv/cfg/vrf.skey'
+cardano-leaderlog-5f8b7695f5-k6dmt:$ export LOCAL_TZ="Etc/UTC"
+```
+
+You can get all available timezones with the following:
+
+```
+Python 3.8.10 (default, Sep 28 2021, 16:10:42)
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pytz
+>>> pytz.all_timezones
+```
+
+The following is the original README.
+
 # ScheduledBlocks
+
 Scheduled Block Checker for Cardano Stakepool Operators
 
 Lightweight and Portable Scheduled Blocks Checker for Next, Current and Previous Epochs.
