@@ -21,12 +21,6 @@ class col:
     bold = '\033[1m'
 
 
-### Set These Variables ###
-#BlockFrostId = "CsdsTOQB4QS2NBXufiT5L2ZBAnHxcfof"
-#PoolId = "6aef3925b53d98084e8a9ec0145c1770e7eb57f84cd2d2613bb4c19a"
-#PoolTicker = "LPR"
-#VrfKeyFile = ('/opt/srv/vrf.skey')
-
 BlockFrostId = os.environ.get('BLOCKFROST_ID')
 PoolId = os.environ.get('POOL_ID')
 PoolTicker = os.environ.get('POOL_TICKER')
@@ -67,19 +61,14 @@ netStakeParam = requests.get("https://cardano-mainnet.blockfrost.io/api/v0/epoch
 json_data = netStakeParam.json()
 nStake = int(netStakeParam.json().get("active_stake")) / lovelaces
 nStake = "{:,}".format(nStake)
+pool = requests.get("https://cardano-mainnet.blockfrost.io/api/v0/pools/"+PoolId, headers=headers)
+json_data = pool.json()
 
-poolHistStake = requests.get("https://cardano-mainnet.blockfrost.io/api/v0/pools/"+PoolId+"/history", headers=headers)
-json_data = poolHistStake.json()
+sigma = json_data['active_size']
 
-for i in json_data :
- if i['epoch'] == int(Cepoch) :
-  sigma = (i["active_size"])
-
-for i in json_data :
- if i['epoch'] == int(Cepoch) :
-  pStake = (i["active_stake"])
-  pStake = int(pStake) / lovelaces
-  pStake = "{:,}".format(pStake)
+pStake = json_data["active_stake"]
+pStake = int(pStake) / lovelaces
+pStake = "{:,}".format(pStake)
 
 print(col.endcl + col.bold + f'Current epoch: ' + col.green + Cepoch + col.endcl) 
 print(col.endcl + col.bold + f'Current epoch nonce: ' + col.bold + col.green + eta0 + col.endcl)
