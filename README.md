@@ -1,8 +1,6 @@
 # LOPHRE fork of ScheduledBlocks
 
-This is simplified version of [Snake Pool's ScheduledBlock](https://github.com/asnakep/ScheduledBlocks).  The original version is using nonce.armada-alliance.com which at
- the time of writing this fork was no more available.  This new version is only providing slot schedule for the current epoch as the nonce for the next epoch was provided
- by the armada-alliance.com service.  I am not creating a pull request to the original code as it has reduced functionnality.
+This is simplified version of [Snake Pool's ScheduledBlock](https://github.com/asnakep/ScheduledBlocks).  This version is only providing slot schedule for the current epoch.
 
 I changed a bit the script to feed it's parameters by using environment variables, you will have to configure those to get going:
 
