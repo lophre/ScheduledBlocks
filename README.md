@@ -2,7 +2,7 @@
 
 This is simplified version of [Snake Pool's ScheduledBlock](https://github.com/asnakep/ScheduledBlocks).  This version is only providing slot schedule for the current epoch.
 
-I changed a bit the script to feed it's parameters by using environment variables, you will have to configure those to get going:
+I changed a bit the script to feed it's parameters by using environment variables (useful for containerized environments), you will have to configure those to get going:
 
 ```
 cardano-leaderlog-5f8b7695f5-k6dmt:$ export BLOCKFROST_ID="your_blockfrost_id_here"
