@@ -1,5 +1,11 @@
 # LOPHRE fork of ScheduledBlocks
 
+## WARNING 
+
+There is currently a bug with this code and will not always produce the correct schedule.  Please don't use until further notice.
+
+## Overview
+
 This is simplified version of [Snake Pool's ScheduledBlock](https://github.com/asnakep/ScheduledBlocks).  This version is only providing slot schedule for the current epoch.
 
 I changed a bit the script to feed it's parameters by using environment variables (useful for containerized environments), you will have to configure those to get going:
