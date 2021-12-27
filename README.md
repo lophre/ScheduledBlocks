@@ -2,7 +2,7 @@
 
 ## WARNING 
 
-The tool will produce inconsistent results if used to early in the epoch.  My experience as of now is that 20 hours past the beginning of the epoch is enough to get good results.  For some reason I don't yet understand, some pool parameters are wrong when queried from blockfrost too early in the epoch.  Still investigating.  Don't hesitate to open an issue if you can contribute with an explanation.
+The tool will produce inconsistent results if used to early in the epoch.  My experience as of now is that 10 hours past the beginning of the epoch is enough to get good results.  For some reason I don't yet understand, some pool parameters are wrong when queried from blockfrost too early in the epoch.  Still investigating.  Don't hesitate to open an issue if you can contribute with an explanation.
 
 ## Overview
 
